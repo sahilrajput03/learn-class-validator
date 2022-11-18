@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "nodemon a.ts"
+    "start": "nodemon a.ts",
+    "start1": "nodemon tekena/b.ts"
   },
   "dependencies": {
     "class-validator": "^0.13.2",
