@@ -35,17 +35,31 @@ validate(post).then((errors) => {
 	if (errors.length > 0) {
 		// console.log('validation failed. errors: ', errors)
 		// console.log('validation failed. errors: ', errors.map(e => Object.keys(e)))
-		console.log('validation failed. errors: ', errors.map((e) => Object.entries(e.constraints as any)))
-    // OUTPUT:
-    // [
-    //   [ [ 'isLength','title must be longer than or equal to 10 characters' ] ],
-    //   [ [ 'contains', 'text must contain a hello string' ] ],
-    //   [ [ 'max', 'rating must not be greater than 10' ] ],
-    //   [ [ 'isEmail', 'email must be an email' ] ],
-    //   [ [ 'isFqdn', 'site must be a valid domain name' ] ],
-    //   [ [ 'isDate', 'createDate must be a Date instance' ] ]
-    // ]
-    
+		// console.log('validation failed. errors: ', errors.map((e) => e.constraints))
+		// console.log(
+		// 	'validation failed. errors: ',
+		// 	errors.map((e) => Object.values(e.constraints as any))
+		// )
+		// OUTPUT:
+		// validation failed. errors:  [
+		// 	[ 'title must be longer than or equal to 10 characters' ],
+		// 	[ 'text must contain a hello string' ],
+		// 	[ 'rating must not be greater than 10' ],
+		// 	[ 'email must be an email' ],
+		// 	[ 'site must be a valid domain name' ],
+		// 	[ 'createDate must be a Date instance' ]
+		//   ]
+
+		// console.log('validation failed. errors: ', errors.map((e) => Object.entries(e.constraints as any)))
+		// OUTPUT:
+		// [
+		//   [ [ 'isLength','title must be longer than or equal to 10 characters' ] ],
+		//   [ [ 'contains', 'text must contain a hello string' ] ],
+		//   [ [ 'max', 'rating must not be greater than 10' ] ],
+		//   [ [ 'isEmail', 'email must be an email' ] ],
+		//   [ [ 'isFqdn', 'site must be a valid domain name' ] ],
+		//   [ [ 'isDate', 'createDate must be a Date instance' ] ]
+		// ]
 	} else {
 		console.log('validation succeed')
 	}

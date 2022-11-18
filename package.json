@@ -1,10 +1,13 @@
 {
   "scripts": {
-    "start": "nodemon a.ts",
-    "start1": "nodemon tekena/b.ts"
+    "start": "nodemon ./docsExample.ts",
+    "start1": "nodemon 1.ts",
+    "start0": "nodemon tekena/b.ts"
   },
   "dependencies": {
+    "@types/expect": "^24.3.0",
     "class-validator": "^0.13.2",
+    "expect": "^29.3.1",
     "nodemon": "^2.0.20",
     "ts-node": "^10.9.1",
     "typescript": "^4.9.3"
